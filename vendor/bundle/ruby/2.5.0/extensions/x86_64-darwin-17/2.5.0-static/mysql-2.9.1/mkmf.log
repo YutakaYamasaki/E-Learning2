@@ -1,0 +1,936 @@
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lmysqlclient  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lmysqlclient  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lmysqlclient  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lmysqlclient  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lmysqlclient  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lmysqlclient  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/usr/local/lib/mysql'
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -lm... -------------------- yes
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1-static -framework Foundation -lm  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: 
+14: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lm  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/usr/local/lib/mysql'
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -lz... -------------------- yes
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lm  -lruby.2.5.1-static -framework Foundation -lz -lm  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: 
+14: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/usr/local/lib/mysql'
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -lsocket... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lsocket -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lsocket
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: 
+14: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/usr/local/lib/mysql'
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -lnsl... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lnsl -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lnsl
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: 
+14: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/usr/local/lib/mysql'
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -lmygcc... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmygcc -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmygcc
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: 
+14: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_query'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17 -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/yutaka/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/usr/local/include -I/Users/yutaka/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -L/Users/yutaka/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lz -lm  -lruby.2.5.1-static -framework Foundation -lmysqlclient -lz -lm  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/usr/local/lib/mysql'
+ld: library not found for -lmysqlclient
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
