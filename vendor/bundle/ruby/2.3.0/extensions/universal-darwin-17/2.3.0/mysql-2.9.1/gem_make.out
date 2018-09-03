@@ -1,0 +1,24 @@
+current directory: /Users/yutaka/Documents/Framgia/RoR/e-leaning/vendor/bundle/ruby/2.3.0/gems/mysql-2.9.1/ext/mysql_api
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -r ./siteconf20180903-34566-bdvf21.rb extconf.rb
+checking for mysql_ssl_set()... no
+checking for rb_str_set_len()... yes
+checking for rb_thread_start_timer()... no
+checking for mysql.h... yes
+creating Makefile
+
+current directory: /Users/yutaka/Documents/Framgia/RoR/e-leaning/vendor/bundle/ruby/2.3.0/gems/mysql-2.9.1/ext/mysql_api
+make "DESTDIR=" clean
+
+current directory: /Users/yutaka/Documents/Framgia/RoR/e-leaning/vendor/bundle/ruby/2.3.0/gems/mysql-2.9.1/ext/mysql_api
+make "DESTDIR="
+compiling mysql.c
+linking shared-object mysql/mysql_api.bundle
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: ignoring file /usr/local/Cellar/mysql@5.7/5.7.23/lib/libmysqlclient.dylib, file was built for x86_64 which is not the architecture being linked (i386): /usr/local/Cellar/mysql@5.7/5.7.23/lib/libmysqlclient.dylib
+
+current directory: /Users/yutaka/Documents/Framgia/RoR/e-leaning/vendor/bundle/ruby/2.3.0/gems/mysql-2.9.1/ext/mysql_api
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 mysql_api.bundle ./.gem.20180903-34566-wk7aan/mysql
