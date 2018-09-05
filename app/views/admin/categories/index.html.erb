@@ -1,0 +1,19 @@
+<%=  provide(:title,"All categories") %>
+<div>
+    <h1 class=""><%= yield(:title) %></h1>
+
+    <%= link_to "ADD NEW CATEGORY", new_admin_category_path, class: "btn btn-primary" %>
+</div>
+    <%= will_paginate %>
+
+        <table class="table">
+            <tr>
+                <th>Category</th>
+                <th>edit</th>
+                <th>Add Word</th>
+                <th>delete</th>
+            </tr>
+            <%= render @categories %>
+        </table>
+
+    <%= will_paginate %>
