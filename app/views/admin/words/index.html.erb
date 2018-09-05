@@ -1,0 +1,16 @@
+<%=  provide(:title,"All word") %>
+    <div>
+        <h1 class=""><%= yield(:title) %></h1>
+    </div>
+        <%= will_paginate %>
+
+
+            <table class="table">
+                <tr>
+                    <th>Word</th>
+                    <th colspan="3">Word Answer</th>
+                </tr>
+                <%= render @words %>
+            </table>
+    
+        <%= will_paginate %>

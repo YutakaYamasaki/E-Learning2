@@ -1,6 +1,6 @@
     <tr>
         <td><%= link_to category.title, admin_category_path(category) %></td>
         <td><%= link_to "EDIT", edit_admin_category_path(category) %></td>
-        <td><%= link_to "Add Word", "" %></td>
+        <td><%= link_to "Add Word", new_admin_category_word_path(category) %></td>
         <td><%= link_to "DELETE", admin_category_path(category), :method => :delete %></td>
     </tr>
