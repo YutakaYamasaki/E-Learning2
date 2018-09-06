@@ -1,6 +1,6 @@
     <tr>
         <td><%= word.content %></td>
         <td><%= word.correct_answer.content %></td>
-        <td><%= link_to "edit", edit_admin_category_word_path(@categories, word) %></td>
-        <td><%= link_to "delete", admin_category_word_path(@categories, word), method: "delete" %></td>
+        <td><%= link_to "edit", edit_admin_category_word_path(@categories, word), class: "btn btn-warning btn-sm " %>
+        	<%= link_to "delete", admin_category_word_path(@categories, word), method: "delete", class: "btn btn-danger btn-sm " %></td>
     </tr>

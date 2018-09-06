@@ -10,7 +10,7 @@ class Admin::WordsController < ApplicationController
     @category = Category.find(params[:category_id])
     @word = @category.words.build(word_params)
     if @word.save
-      flash[:succees] = "Create Word."
+      flash[:success] = "Create Word."
       redirect_to admin_category_words_path
     else
       render "new"
