@@ -1,0 +1,19 @@
+<%= form_for ([:admin, @category, @word]) do |f|  %>
+
+<%= render 'shared/error_messages',object: f.object %>
+
+    <div class= "form-group">
+            <%= f.label :Word_content %>
+            <%= f.text_field :content,  class: "form-control" %>
+    </div>
+    <div class= "form-group">
+            <%= f.label :Word_answer %>
+            <%= f.fields_for :word_answers do |i| %>
+                <%= i.check_box :correct %>
+                <%= i.text_field :content,  class: "form-control" %>
+            <% end %>
+    </div>
+
+    <%= f.submit "Create new word", class: "btn btn-primary form-control" %>
+<% end %>
+
