@@ -1,6 +1,8 @@
 class Word < ApplicationRecord
   belongs_to :category
-  has_many :word_answers, dependent: :destroy
+  # belongs_to :lesson
+  has_many :word_answers, dependent: :destroy  
+  has_many :lesson_words, dependent: :destroy
   accepts_nested_attributes_for :word_answers
   
   

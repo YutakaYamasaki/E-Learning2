@@ -1,0 +1,9 @@
+    <tr>
+        <td><%= category.title %></td>
+        <td><%= category.description %></td>
+        <% if lesson = current_user.lessons.find_by(category_id: category.id) %>
+        <td><%= link_to "Result",lesson_path(lesson), class: "btn btn-success btn-sm " %></td>
+        <% else %>
+        <td><%= button_to "Start", lessons_path, params: {category_id: category.id} ,class: "btn btn-success btn-sm " %></td>        	
+        <% end %>
+    </tr>
