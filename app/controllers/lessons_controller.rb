@@ -1,8 +1,7 @@
 class LessonsController < ApplicationController
 	def create
-		@user = current_user
 		@category = Category.find(params[:category_id])
-		@lesson = @user.lessons.build(category: @category)
+		@lesson = current_user.lessons.build(category: @category)
 		if @lesson.save
 			redirect_to new_lesson_lesson_word_path(@lesson)
 		else
