@@ -1,0 +1,18 @@
+<%=  provide(:title,"Result") %>
+<div>
+    <h1 class=""><%= yield(:title) %></h1>
+</div>
+        <table class="table">
+            <tr>
+                <th>word</th>
+                <th>answer</th>
+                <th>true or false</th>
+            </tr>
+            <% @lessons.lesson_words.each do |lesson_word| %>
+                <tr>
+                    <td><%= lesson_word.word.content %></td>
+                    <td><%= lesson_word.word_answer.content %></td>
+                    <td><%= lesson_word.word_answer.correct %></td>
+                </tr>
+            <% end %>
+        </table>

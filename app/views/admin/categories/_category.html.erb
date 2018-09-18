@@ -2,5 +2,5 @@
         <td><%= link_to category.title, admin_category_words_path(category), class: "btn btn-info btn-block" %></td>
         <td><%= link_to "EDIT", edit_admin_category_path(category), class: "btn btn-warning btn-sm " %>
         	<%= link_to "Add Word", new_admin_category_word_path(category), class: "btn btn-success btn-sm"%>
-        	<%= link_to "DELETE", admin_category_path(category), :method => :delete, class: "btn btn-danger btn-sm" %></td>
+        	<%= link_to "DELETE", admin_category_path(category) , method: "delete", class: "btn btn-danger btn-sm" %></td>
     </tr>

@@ -31,10 +31,10 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
+    if @category.destroy
     flash[:info] = "Deleted category successfully."
     redirect_to request.referrer || root_url
-    
+    end
   end
 
   private
