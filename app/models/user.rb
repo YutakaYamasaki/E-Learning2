@@ -10,7 +10,45 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_many :lessons
-  has_many :categories, through: :lessons
+  has_many :words, through: :lessons
+  has_many :lesson_words, through: :lessons
+  has_many :categories, through: :lessons 
+  has_many :active_relationships,class_name:"Relationship",
+                                foreign_key: "follower_id",
+                                dependent: :destroy
+
+
+  has_many :passive_relationships,class_name:"Relationship",
+                                foreign_key: "followed_id",
+                                dependent: :destroy
+
+  has_many :following, through: :active_relationships,
+              source: :followed
+  has_many :followers, through: :passive_relationships,
+              source: :follower
+
+  has_many :activities, dependent: :destroy
+
+
+  def follow(other_user)
+    following << other_user
+
+    relationship = active_relationships.find_by(followed: other_user)
+    relationship.activities.create(user: self)
+  end
+
+  def following?(other_user)
+    following.include? other_user
+    
+  end
+
+  def unfollow(other_user)
+    relationship = active_relationships.find_by(followed: other_user)
+    relationship.activities.first.destroy
+
+    following.delete(other_user)
+  end
+
 
     # 渡された文字列のハッシュ値を返す
   def User.digest(string)
@@ -39,5 +77,9 @@ class User < ApplicationRecord
   # ユーザーのログイン情報を破棄する
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def activity_feed
+    Activity.where("user_id IN (?) OR user_id = ?", following_ids, id)
   end
 end
