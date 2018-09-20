@@ -1,0 +1,44 @@
+<%= provide(:body_class, 'dashboard') %>
+
+<div class="container container-small">
+    <div class="row">
+        <div class="col-sm-4">
+        <section class="user_info">
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+            </h1>
+        </section>
+        </div>
+        <div class="col-sm-8">
+            <div>
+                <div>
+                    <div class="row">
+                        <h1 class="col-sm-6">Words learned</h1>
+                        <div class="col-sm-6 text-right">
+                            <small><%= link_to "Back to dashboard", dashboard_index_path %></small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th>Word</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                        </tr>
+
+                        <% current_user.lesson_words.each do |lesson_word| %>
+                            <tr>
+                                <td><%= lesson_word.word.content %></td>
+                                <td><%= lesson_word.word_answer.content %></td>
+                                <td><%= lesson_word.word.correct_answer.content %></td>
+                            </tr>
+                        <% end %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

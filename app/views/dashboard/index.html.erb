@@ -1,0 +1,28 @@
+<% if @activities.any? %>
+<h1>DashBoard</h1>
+<% @activities.each do |activity| %>
+    <div class="row">
+        <% if activity.action_type == "Relationship" %>
+                <%= gravatar_for(activity.action.followed) %>
+                <div >
+                    <span><%= link_to activity.user.name, dashboard_index_path %></span>
+                    <span> followed </span>
+                    <span><%= link_to activity.action.followed.name, user_path(activity.action.followed) %></span>
+                    <p> <%= time_ago_in_words(activity.created_at) %> ago.</p>
+                </div>
+        <% else %>
+                <%= gravatar_for(current_user) %>
+                <div>
+                    <span><%= link_to activity.user.name, dashboard_index_path %></span>
+                    <span> learned </span>
+                    <span><%= activity.action.word_answers.where(correct:true).count %></span>
+                    <span> of </span>
+                    <span><%= activity.action.words.count %></span>
+                    <span> in </span>
+                    <span ><%= link_to activity.action.category.title, lesson_path(activity.action) %></span>
+                    <p> <%= time_ago_in_words(activity.created_at) %> ago.</p>
+                </div>
+        <% end %>  
+        </div>
+<% end %>
+<% end %>

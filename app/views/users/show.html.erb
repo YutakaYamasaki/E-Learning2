@@ -1,12 +1,47 @@
 <% provide(:title, @user.name) %>
 <div class="row">
     <aside class="col-md-4">
-        <section class="user_info">
+        <section class="user_info text-center">
             <h1>
                 <%= gravatar_for @user %>
                 <%= @user.name %>
             </h1>
         </section>
+        <%= render 'follow_form' if logged_in? %>
+        <section class="stats">
+        <%= render 'shared/stats' %>
+        </section>
+         <div class="text-center">
+                <h4><%= button_to @user.words.count, words_path, method: :get %></h4>
+                <small>words learned</small>
+        </div>
     </aside>
-    
+    <% if @activities.any? %>
+    <div class="col-md-8">
+        <h1>DashBoard</h1>
+        <% @activities.each do |activity| %>
+            <% if activity.action_type == "Relationship" %>
+            <%= gravatar_for(activity.action.followed) %>
+                <div class="row">
+                    <span><%= link_to activity.user.name, dashboard_index_path %></span>
+                    <span> followed </span>
+                    <span><%= link_to activity.action.followed.name, user_path(activity.action.followed) %></span>
+                    <p > <%= time_ago_in_words(activity.created_at) %> ago.</p>
+                </div>
+            <% else %>
+                <%= gravatar_for(current_user) %>
+                <div class="row">
+                    <span><%= link_to activity.user.name, dashboard_index_path %></span>
+                    <span> learned </span>
+                    <span><%= activity.action.word_answers.where(correct:true).count %></span>
+                    <span> of </span>
+                    <span><%= activity.action.words.count %></span>
+                    <span> in </span>
+                    <span ><%= link_to activity.action.category.title, lesson_path(activity.action) %></span>
+                    <p> <%= time_ago_in_words(activity.created_at) %> ago.</p>
+                </div>
+            <% end %>  
+        <% end %>
+        </div>
+    <% end %>
 </div>

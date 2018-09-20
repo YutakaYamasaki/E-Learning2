@@ -10,10 +10,13 @@ Rails.application.routes.draw do
   get     '/login',     to: 'sessions#new'
   post    '/login',     to: 'sessions#create'
   delete  '/logout',    to: 'sessions#destroy'
+  get     '/words',     to: 'words#index'
+
+
 
   resources :categories, only:[:index]
   resources :users
-
+  resources :dashboard, only:[:index]
   resources :lessons do
     resources :lesson_words
   end
@@ -21,6 +24,13 @@ Rails.application.routes.draw do
     resources :categories do
       resources :words do
       end
+    end
+  end
+
+  resources :relationships
+  resources :users do
+    member do
+     get :following, :followers
     end
   end
 end
